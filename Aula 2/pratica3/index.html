@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografia do Migles</title>
+</head>
+<body>
+    <header>
+        <h1>Biografia de Miguel</h1>
+    </header>
+
+    <h2>Introdução</h2>
+    <p>Meu nome é <b>Miguel</b> e sou estudante na unidavi, estou atualmente na fase 4 de Sistema de Informação</p>
+
+    <h3>Formulário de Cadastro</h3>
+    <form action="cadastro.php" method="POST">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <ul>
+                <li>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </li>
+                <li>
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" name="idade" required>
+                </li>
+                <li>
+                    <label for="experiencia">Experiência:</label>
+                    <textarea id="experiencia" name="experiencia"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </form>
+
+    <h3>Informações Pessoas</h3>
+    <ul>
+        <li>Idade 20 anos</li>
+        <li>Eu tenho pai e mãe</li>
+        <li>Meu cachorro morreu</li>
+    </ul>
+    
+    <h4>O melhor <a href="https://www.google.com" target="_blank">link</a> de todos</h4>
+
+    <div>
+        <h5>Experiência</h5>
+        <p>Eu já trabalhei como <strong>Corretor de seguro</strong> em cima cidade Natal</p>
+    </div>
+
+    <h6>Meu código em JavaScript</h6>
+    <pre>
+    var MeuMundo = "Hello World!";    
+    console.log(MeuMundo);
+    </pre>
+
+    <h6>Vídeo Explicativo</h6>
+    <video width="320" height="240" controls>
+        <source src="https://youtu.be/FpsCzFGL1LE?si=-je29jj-R7rS9PTq" type="">
+    </video>
+
+    <h6>Áudio de alta qualidade</h6>
+    <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"></audio>
+
+    <img src="https://s2.glbimg.com/CZ7vt10tkQki58E3X37KbSrW8PA=/620x430/e.glbimg.com/og/ed/f/original/2022/04/11/dall_e_ia.png" alt="Imagem gerada por IA">
+
+</body>
+</html>
