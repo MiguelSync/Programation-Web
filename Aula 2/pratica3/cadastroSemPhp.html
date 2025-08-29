@@ -3,89 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Pessoa</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        fieldset {
-            width: 60%;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #555;
-            border-radius: 8px;
-        }
-        legend {
-            font-weight: bold;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 95%;
-            padding: 8px;
-            margin-top: 5px;
-        }
-        input[type="radio"] {
-            width: auto;
-            margin-right: 5px;
-        }
-        .botoes {
-            margin-top: 15px;
-            text-align: center;
-        }
-    </style>
+    <title>Cadastro Completo</title>
 </head>
 <body>
-    <h2>Cadastro de Pessoa</h2>
+    <h2>Formulário de Cadastro</h2>
     <form action="cadastro.php" method="POST">
         <fieldset>
             <legend>Dados Pessoais</legend>
-
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" maxlength="100" required>
-
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome" maxlength="100" required>
-
-            <label for="email">E-Mail:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="data">Data de Nascimento:</label>
-            <input type="date" id="data" name="data" min="1920-01-01" max="2024-01-01">
-
-            <label>Sexo:</label>
-            <input type="radio" id="masculino" name="sexo" value="Masculino">
-            <label for="masculino" style="display:inline;">Masculino</label>
-            <input type="radio" id="feminino" name="sexo" value="Feminino">
-            <label for="feminino" style="display:inline;">Feminino</label>
-
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" maxlength="200">
-
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" maxlength="10">
-
-            <label for="cor">Cor Favorita:</label>
-            <input type="color" id="cor" name="cor">
-
-            <label for="estado">Estado (UF):</label>
-            <select id="estado" name="estado">
-                <option value="">Selecione...</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="PR">Paraná</option>
-                <option value="SP">São Paulo</option>
-                <option value="RJ">Rio de Janeiro</option>
-            </select>
-
-            <div class="botoes">
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Limpar">
-            </div>
+            <ul>
+                <li>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" maxlength="100" required>
+                </li>
+                <li>
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" maxlength="100" required>
+                </li>
+                <li>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </li>
+                <li>
+                    <label for="data_nasc">Data de Nascimento:</label>
+                    <input type="date" id="data_nasc" name="data_nasc" min="1920-01-01" max="2024-01-01">
+                </li>
+                <li>
+                    <label>Sexo:</label>
+                    <input type="radio" id="masculino" name="sexo" value="Masculino">
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" id="feminino" name="sexo" value="Feminino">
+                    <label for="feminino">Feminino</label>
+                </li>
+                <li>
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" maxlength="200">
+                </li>
+                <li>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" maxlength="10">
+                </li>
+                <li>
+                    <label for="cor">Cor favorita:</label>
+                    <input type="color" id="cor" name="cor">
+                </li>
+                <li>
+                    <label for="uf">Estado (UF):</label>
+                    <select id="uf" name="uf">
+                        <option value="">Selecione</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="MG">MG</option>
+                        <option value="RS">RS</option>
+                        <option value="BA">BA</option>
+                        <option value="PR">PR</option>
+                        <option value="SC">SC</option>
+                    </select>
+                </li>
+            </ul>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
         </fieldset>
     </form>
 </body>
