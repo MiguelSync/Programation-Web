@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: brown;
+}
+
+.cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60%;
+    width: 30%;
+    background-color: white;
+    flex-direction: column;
+}
+
+.input-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-block: 20px;
+}
+
+.input-password {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
