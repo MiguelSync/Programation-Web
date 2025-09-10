@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora iOS Style</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div id="resultado" class="display">0</div>
+    <div class="buttons">
+      <button onclick="limpar()" class="func">AC</button>
+      <button onclick="inverter()" class="func">+/-</button>
+      <button onclick="porcentagem()" class="func">%</button>
+      <button onclick="definirOperacao('/')" class="op">÷</button>
+
+      <button onclick="digitar(7)">7</button>
+      <button onclick="digitar(8)">8</button>
+      <button onclick="digitar(9)">9</button>
+      <button onclick="definirOperacao('*')" class="op">×</button>
+
+      <button onclick="digitar(4)">4</button>
+      <button onclick="digitar(5)">5</button>
+      <button onclick="digitar(6)">6</button>
+      <button onclick="definirOperacao('-')" class="op">−</button>
+
+      <button onclick="digitar(1)">1</button>
+      <button onclick="digitar(2)">2</button>
+      <button onclick="digitar(3)">3</button>
+      <button onclick="definirOperacao('+')" class="op">+</button>
+
+      <button onclick="digitar(0)" class="zero">0</button>
+      <button onclick="digitar('.')">.</button>
+      <button onclick="calcular()" class="op">=</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 
+//
