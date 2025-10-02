@@ -51,11 +51,11 @@
 
                     foreach ($boletim as $disciplina) {
                         echo "
-                        <table style="border = 1">
+                        <table>
                             <tr>
-                                <th>"$disciplina[Disciplina]"</th>
-                                <th>"$disciplina[Faltas]"</th>
-                                <th>"$disciplina[Média]"</th>
+                                <th>""</th>
+                                <th>""</th>
+                                <th>""</th>
                             </tr>
                             
                         </table> "   
