@@ -50,16 +50,8 @@
                      array("Disciplina" => "Matematica", "Faltas" => "5", "Média" => "7"));
 
                     foreach ($boletim as $disciplina) {
-                        echo "
-                        <table>
-                            <tr>
-                                <th>""</th>
-                                <th>""</th>
-                                <th>""</th>
-                            </tr>
-                            
-                        </table> "   
-                     };
+                    
+                    }
     ?>
 
     <!DOCTYPE html>
