@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.principal-estrutura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.estrutura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+    height: 50%;
+    width: 100vh;
+}
+
+.title {
+    text-align: center;
+}
+
+.buttons-feedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    width: 5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.2); /* aumenta 20% */
+  filter: brightness(1.25);
+}
+
+.buttons0  { background-color: #d73027; } /* vermelho forte */
+.buttons1  { background-color: #e74c3c; }
+.buttons2  { background-color: #f46d43; }
+.buttons3  { background-color: #f78c40; }
+.buttons4  { background-color: #fdae61; }
+.buttons5  { background-color: #fee08b; color: black; }
+.buttons6  { background-color: #e6f598; color: black; }
+.buttons7  { background-color: #abdda4; color: black; }
+.buttons8  { background-color: #66bd63; }
+.buttons9  { background-color: #4daf4a; }
+.buttons10 { background-color: #1a9850; }
+
+footer {
+    position: absolute;
+    bottom: 10px;
+}
