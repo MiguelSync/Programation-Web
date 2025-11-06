@@ -46,7 +46,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+    aspect-ratio: 1 / 1;
     width: 5rem;
     font-size: 3rem;
     cursor: pointer;
@@ -56,11 +56,11 @@ body {
 }
 
 .button:hover {
-  transform: scale(1.2); /* aumenta 20% */
+  transform: scale(1.2);
   filter: brightness(1);
 }
 
-.buttons0  { background-color: #d73027; } /* vermelho forte */
+.buttons0  { background-color: #d73027; }
 .buttons1  { background-color: #e74c3c; }
 .buttons2  { background-color: #f46d43; }
 .buttons3  { background-color: #f78c40; }
@@ -75,7 +75,6 @@ body {
 footer {
     position: absolute;
     bottom: 10px;
-    
 }
 
 footer h3 {
@@ -101,7 +100,6 @@ footer h3 {
     justify-content: space-between;
     align-items: center;
     width: 50vh;
-    gap: 20px;
 }
 
 .action {
@@ -111,7 +109,6 @@ footer h3 {
     flex-direction: column;
     width: 25rem;
     height: 8rem;
-    border: 1px solid black;
     padding: 20px;
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
@@ -128,4 +125,89 @@ footer h3 {
 
 .action h1 {
     font-size: 25px;
+}
+
+/* Fundo com blur */
+.modal-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal */
+.modal-adm {
+  background-color: #ffffff;
+  color: #000;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.modal-adm .fechar {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #666;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-adm .fechar:hover {
+  color: #ff4444;
+}
+
+.title-adm {
+    margin-bottom: 20px;
+}
+
+.inputadm {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #c7c7c7;
+    color: #fff;
+}
+
+.inputadm:focus {
+    outline: 2px solid #00bcd4;
+}
+
+.button-adm {
+    width: 95%;
+    padding: 10px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00bcd4;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.button-adm:hover {
+    background-color: #00a5ba;
+}
+
+.mensagem {
+    margin-top: 10px;
+    font-size: 14px;
 }
