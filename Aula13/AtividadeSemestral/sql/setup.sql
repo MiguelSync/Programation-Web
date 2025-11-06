@@ -1,21 +1,21 @@
-CREATE TABLE setores (
+CREATE TABLE IF NOT EXITS TBsetores (
     id_setor SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE dispositivos (
+CREATE TABLE IF NOT EXITS TBdispositivos (
     id_dispositivo SERIAL PRIMARY KEY,
     nome_dispositivo VARCHAR(100) NOT NULL,
     status VARCHAR(10) CHECK (status IN ('ativo', 'inativo'))
 );
 
-CREATE TABLE perguntas (
+CREATE TABLE IF NOT EXITS TBperguntas (
     id_pergunta SERIAL PRIMARY KEY,
     texto_pergunta TEXT NOT NULL,
     status VARCHAR(10) CHECK (status IN ('ativa', 'inativa'))
 );
 
-CREATE TABLE avaliacoes (
+CREATE TABLE IF NOT EXITS TBavaliacoes (
     id_avaliacao SERIAL PRIMARY KEY,
     id_setor INT REFERENCES setores(id_setor),
     id_pergunta INT REFERENCES perguntas(id_pergunta),
@@ -25,7 +25,7 @@ CREATE TABLE avaliacoes (
     data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-CREATE TABLE usuarios_admin (
+CREATE TABLE IF NOT EXITS TBusuariosadmin (
     id SERIAL PRIMARY KEY,
     user_id VARCHAR(10) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL
