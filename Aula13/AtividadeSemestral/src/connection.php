@@ -1,12 +1,42 @@
 <?php
-function connectionDatabase() {
-    $connectionString = "host=localhost port=5432 dbname=postgres user=miguel password=";
-    $connection = pg_connect($connectionString);
 
-    if (!$connection) {
-        die("Erro ao conectar ao banco de dados.");
+class Connection {
+
+    private $inTransaction;
+
+    public function getInTransaction(){
+        return $this->inTransaction;
     }
 
-    return $connection;
+    public function setInTransaction($inTransaction){
+        $this->inTransaction = $inTransaction;
+    }
+
+    public static function getInstance() {
+        static $oConexao = null;
+
+        if (!isset($oConexao)) {
+            $oConexao = new Connection();
+        }
+
+        return $oConexao;
+    }
+
+    public static function getConnection () {
+        static $conn = null;
+
+        if (!isset($conn)) {
+            $conn = "host=localhost 
+                     port=5432 
+                     dbname=FeedbackUnidavi 
+                     user=miguel 
+                     password=";
+
+            $conn = pg_connect($conn);
+        }
+    return $conn;    
+    }
 }
-?>
+
+
+
