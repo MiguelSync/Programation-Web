@@ -1,8 +1,8 @@
 var Avaliacao = {
 
-    questoes: [],
+    questoes: {},
     perguntaAtual: 0,
-    respostas: [],
+    respostas: {},
 
     /** Comportamento realizado ao carregar a tela */
     onLoadAvaliacao: function() {
@@ -24,8 +24,9 @@ var Avaliacao = {
             method: 'get',
             async: false
         }).then(function(response) {
-            let perguntas = Object.values(JSON.parse(response));
+            let perguntas = JSON.parse(response);
             Avaliacao.questoes = perguntas;
+            Avaliacao.perguntaAtual = parseInt(Object.keys(perguntas)[0]);
         });
     },
 
@@ -57,7 +58,7 @@ var Avaliacao = {
     onClickButtonAnswer: function() {
         Avaliacao.respostas[Avaliacao.perguntaAtual] = this.value;
 
-        if (Avaliacao.perguntaAtual != (Avaliacao.questoes.length - 1)) {
+        if (Avaliacao.perguntaAtual != Object.keys(Avaliacao.questoes).pop()) {
             Avaliacao.perguntaAtual++;
             Avaliacao.carregaProximaPergunta();
         } else {
@@ -79,23 +80,23 @@ var Avaliacao = {
 
     salvaQuestionario: function() {
         Avaliacao.respostas['feedback'] = $('#feedbackTexto')[0].value;
-
         $.ajax({
             url: 'http://localhost:8000/Aula13/AtividadeSemestral/src/avaliacao.php',
             method: 'post',
-            data: {respostas: Avaliacao.respostas}
+            data: JSON.stringify(Avaliacao.respostas),
+            contentType: 'application/json; charset=UTF-8'
          }).then((response) => {
             $('#feedback-final').css('display', 'none'); 
             $('.modal-agradecimento').css('display', 'flex'); 
             setTimeout(function() {
                 $('.modal-agradecimento').css('display', 'none'); 
-                Avaliacao.reiniciaQuestionario();
+                 Avaliacao.reiniciaQuestionario();
             }, 10000);
         });
     },
 
     reiniciaQuestionario: function() {
-        Avaliacao.perguntaAtual = 1;
+        Avaliacao.perguntaAtual = parseInt(Object.keys(Avaliacao.questoes)[0]);
         $('#feedback-final').css('display', 'none'); 
         $('#estrutura-container').css('display', 'flex'); 
     }

@@ -53,6 +53,7 @@ body {
     border-radius: 8px;
     transition: transform 0.2s ease, background-color 0.2s ease;
     filter: brightness(0.75);
+    border: 0px;
 }
 
 .button:hover {
