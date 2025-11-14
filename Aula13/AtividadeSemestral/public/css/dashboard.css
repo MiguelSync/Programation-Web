@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    height: 100vh;
+    background-color: #004AAD;
+
+}
+
+.navbar-estrutura{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.options-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fa-solid {
+    font-size: 3.5vh;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    color: #4DA3FF;
+    padding: 8px;
+}
+
+.fa-solid:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.exibe-info {
+    display: flex;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  70% {
+    transform: scale(0.98) translateY(5px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
