@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard - Unidavi Rio do Sul</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/dashboard.css">
+    <script src="../public/js/dashboard.js"></script>
 </head>
 <body>
-    ola mundo
+    <nav class="navbar" id="navbar">
+        <div class="navbar-estrutura">
+            <div class="abre-menu" id="btn-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="options-menu">
+                <div class="option-pergunta">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <div class="option-setor">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <div class="option-dispositivo">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+            </div>
+
+            <div class="exit-menu">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="exibe-info">
+        <div class="layout pergunta-layout">
+            <p>pergunta</p>
+        </div>
+
+        <div class="layout setor-layout">
+            <p>setor</p>
+        </div>
+
+        <div class="layout dispositivo-layout">
+            <p>dispositivo</p>
+        </div>
+    </main>
 </body>
 </html>

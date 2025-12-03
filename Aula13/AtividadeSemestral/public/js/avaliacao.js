@@ -79,6 +79,7 @@ var Avaliacao = {
     },
 
     salvaQuestionario: function() {
+        
         Avaliacao.respostas['feedback'] = $('#feedbackTexto')[0].value;
         $.ajax({
             url: 'http://localhost:8000/Aula13/AtividadeSemestral/src/avaliacao.php',
