@@ -6,7 +6,6 @@ function validarLogin() {
   const userCorreto = "1234";
   const senhaCorreta = "admin";
 
-  
 
   if (userId === userCorreto && senha === senhaCorreta) {
     msg.style.color = "green";

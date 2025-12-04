@@ -7,23 +7,65 @@ var Avaliacao = {
     /** Comportamento realizado ao carregar a tela */
     onLoadAvaliacao: function() {
         Avaliacao.loadScripts();
-        Avaliacao.carregaPerguntas();
-        Avaliacao.startQuiz();
+        let dispositivo = Cookies.get('dispositivo');
+        if (dispositivo == undefined) {
+            Avaliacao.carregaDispositivos();
+        } else {
+            Avaliacao.carregaPerguntas(dispositivo);
+            Avaliacao.startQuiz();
+        }
     },
 
     /** Carrega os comportamentos iniciais dos componentes */
     loadScripts: function() {
+        $('#btn-dispositivo').on('click', Avaliacao.onClickBotaoDefinirDispositivo);
         $('.button').on('click', Avaliacao.onClickButtonAnswer);
         $('#btnEnviar').on('click', Avaliacao.salvaQuestionario);
     },
 
-    /** Carrega as perguntas do formulário */
-    carregaPerguntas: function() {
+    /** Realiza o carregamento dos setores disponíveis */
+    carregaDispositivos: function() {
         $.ajax({
-            url: 'http://localhost:8000/Aula13/AtividadeSemestral/src/pergunta.php',
+            url: 'http://localhost:8080/Aula13/AtividadeSemestral/src/dispositivo.php',
             method: 'get',
             async: false
         }).then(function(response) {
+            let dispositivos = Object.values(JSON.parse(response));
+            $('#optionsDispositivos').append('<option value="0">Selecione...</option>');
+
+            for (let i = 0; i < dispositivos.length; i++) {
+                let novaOpcaoDispositivo = `<option value="${dispositivos[i]['discodigo']}">${dispositivos[i]['setnome']}</option>`;
+                $('#optionsDispositivos').append(novaOpcaoDispositivo);
+            }
+
+            $('#layoutDispositivo').css('display', 'flex');
+        });
+    },
+
+    /** Comportamento chamado ao clicar no botão "Definir Dispositivo" */
+    onClickBotaoDefinirDispositivo: function() {
+        let dispositivo = $('#optionsDispositivos').val();
+
+        if (dispositivo == 0) {
+            Message.warn('É necessário selecionar um dispositivo para poder prosseguir.');
+            $('#optionsDispositivos').focus();
+            return;
+        }
+
+        Cookies.set('dispositivo', dispositivo, { expires: 7});
+        Avaliacao.carregaPerguntas(dispositivo);
+        Avaliacao.startQuiz();
+    },
+
+    /** Carrega as perguntas do formulário */
+    carregaPerguntas: function(dispositivo) {
+        $.ajax({
+            url: 'http://localhost:8080/Aula13/AtividadeSemestral/src/pergunta.php',
+            method: 'get',
+            data: {dispositivo: dispositivo},
+            async: false
+        }).then(function(response) {
+            $('#layoutDispositivo').css('display', 'none');
             let perguntas = JSON.parse(response);
             Avaliacao.questoes = perguntas;
             Avaliacao.perguntaAtual = parseInt(Object.keys(perguntas)[0]);
@@ -82,7 +124,7 @@ var Avaliacao = {
         
         Avaliacao.respostas['feedback'] = $('#feedbackTexto')[0].value;
         $.ajax({
-            url: 'http://localhost:8000/Aula13/AtividadeSemestral/src/avaliacao.php',
+            url: 'http://localhost:8080/Aula13/AtividadeSemestral/src/avaliacao.php',
             method: 'post',
             data: JSON.stringify(Avaliacao.respostas),
             contentType: 'application/json; charset=UTF-8'

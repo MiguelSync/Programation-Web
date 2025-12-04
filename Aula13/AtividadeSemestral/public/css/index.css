@@ -301,6 +301,52 @@ footer h3 {
   line-height: 1.4;
 }
 
+.layoutDispositivo {
+  display: flex;
+  flex-direction: column;      /* deixar tudo em coluna */
+  justify-content: center;
+  align-items: center;
+  gap: 15px;                   /* espaçamento entre os itens */
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  width: 350px;
+  max-width: 90%;
+}
+
+/* Título */
+.title-dispositivo {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Select */
+.input-options-dispositivo {
+  width: 100%;
+}
+
+.input-options-dispositivo select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Botão */
+.btn-dispositivo {
+  width: 100%;
+}
+
+.btn-dispositivo button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 0;
+  background-color: #00bcd4;
+  color: white;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
