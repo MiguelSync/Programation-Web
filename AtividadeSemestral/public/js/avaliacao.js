@@ -11,6 +11,7 @@ var Avaliacao = {
         if (dispositivo == undefined) {
             Avaliacao.carregaDispositivos();
         } else {
+            debugger
             Avaliacao.carregaPerguntas(dispositivo);
             Avaliacao.startQuiz();
         }
@@ -26,7 +27,7 @@ var Avaliacao = {
     /** Realiza o carregamento dos setores disponíveis */
     carregaDispositivos: function() {
         $.ajax({
-            url: 'http://localhost:8080/Aula13/AtividadeSemestral/src/dispositivo.php',
+            url: 'http://localhost:8080/AtividadeSemestral/src/dispositivo.php',
             method: 'get',
             async: false
         }).then(function(response) {
@@ -37,7 +38,6 @@ var Avaliacao = {
                 let novaOpcaoDispositivo = `<option value="${dispositivos[i]['discodigo']}">${dispositivos[i]['setnome']}</option>`;
                 $('#optionsDispositivos').append(novaOpcaoDispositivo);
             }
-
             $('#layoutDispositivo').css('display', 'flex');
         });
     },
@@ -60,7 +60,7 @@ var Avaliacao = {
     /** Carrega as perguntas do formulário */
     carregaPerguntas: function(dispositivo) {
         $.ajax({
-            url: 'http://localhost:8080/Aula13/AtividadeSemestral/src/pergunta.php',
+            url: 'http://localhost:8080/AtividadeSemestral/src/pergunta.php',
             method: 'get',
             data: {dispositivo: dispositivo},
             async: false
@@ -124,7 +124,7 @@ var Avaliacao = {
         
         Avaliacao.respostas['feedback'] = $('#feedbackTexto')[0].value;
         $.ajax({
-            url: 'http://localhost:8080/Aula13/AtividadeSemestral/src/avaliacao.php',
+            url: 'http://localhost:8080/AtividadeSemestral/src/avaliacao.php',
             method: 'post',
             data: JSON.stringify(Avaliacao.respostas),
             contentType: 'application/json; charset=UTF-8'

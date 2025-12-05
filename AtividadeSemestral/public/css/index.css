@@ -315,14 +315,12 @@ footer h3 {
   max-width: 90%;
 }
 
-/* Título */
 .title-dispositivo {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
 
-/* Select */
 .input-options-dispositivo {
   width: 100%;
 }
@@ -333,7 +331,6 @@ footer h3 {
   font-size: 16px;
 }
 
-/* Botão */
 .btn-dispositivo {
   width: 100%;
 }
